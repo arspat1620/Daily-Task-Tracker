@@ -26,8 +26,6 @@ class App(ctk.CTk):
         self.popup_height=150
         self.spawn_x = self.main_X + (self.main_w // 2) - (self.popup_width // 2)
         self.spawn_y = self.main_y + (self.main_h // 2) - (self.popup_height // 2)
-        self.data_Reset_Flag=False
-        self.stat_Reset_Flag=False
         file=open(userDataFileDir,"r")
         
         if not file.read():
