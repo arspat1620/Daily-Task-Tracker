@@ -657,6 +657,9 @@ t_id: {t_id}
         fade()
 
     def dataReset(self):
+        os.remove(taskFileDir)
+        f = open(taskFileDir,"x")
+        f.close()
         with open(userDataFileDir,"r") as f:
             data=f.readlines()
             f.close()
@@ -665,6 +668,10 @@ t_id: {t_id}
         with open(userDataFileDir,"w") as f:
             f.writelines(data)
             f.close()
+        self.Done=0
+        self.Left=0
+        self.Total=0
+        
         wt=(3600*24)-(dt.now().hour*3600)-(dt.now().minute*60)-(dt.now().second)
         self.after(wt*1000,lambda:(self.dataReset()))
 
