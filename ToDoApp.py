@@ -876,7 +876,7 @@ Su:
             self.after(1600,lambda *args: (entry.place(relx=0.5,rely=0.52,anchor="center")),entry.focus())
             
             def getname(*args):
-                file=open("D:/Code/Python/userData.txt","w")
+                file=open(userDataFileDir,"w")
                 self.name=entry.get()
                 file.write(f"""Name: {self.name}
 LC:
